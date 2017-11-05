@@ -16,6 +16,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Iterator;
 
 public class Pusher {
 	private Repository repo;
@@ -35,8 +36,9 @@ public class Pusher {
 	}
 	
 	void assignRepo() {
+		
 		repBuilder.setMustExist(true);
-		repBuilder.setGitDir(new File("C:\\Users\\Staley Robotics\\git\\GroupCreator"));
+		repBuilder.setGitDir(new File(repositroyPath));
 		try {
 			repo = repBuilder.build();
 		} catch (IOException e) {

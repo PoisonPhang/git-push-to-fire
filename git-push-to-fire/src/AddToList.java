@@ -28,11 +28,14 @@ public class AddToList {
 		projectDir = "";
 	}
 	
-	public void addItem(String projectDir) {
-		System.out.println("Out: " + list);
-		list.add(projectDir);
-		System.out.println("Out: " + list);
+	public JSONObject getList() {
+		return obj;
 	}
+	
+	public void addItem(String projectDir) {
+		list.add(projectDir);
+	}
+	
 	public void saveToFile() {
 		obj.put("ProjDirs", list);
 		
