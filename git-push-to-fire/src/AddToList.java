@@ -17,26 +17,25 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 public class AddToList {
-	JSONArray list;
-	JSONObject obj;
+	private JSONArray list;
+	private JSONObject obj;
 	Repository repo;
-	String projectDir;
-	
-	public AddToList() {
+
+	AddToList() {
 		list = new JSONArray();
 		obj = new JSONObject();
-		projectDir = "";
+		String projectDir = "";
 	}
 	
-	public JSONObject getList() {
+	JSONObject getList() {
 		return obj;
 	}
 	
-	public void addItem(String projectDir) {
+	void addItem(String projectDir) {
 		list.add(projectDir);
 	}
 	
-	public void saveToFile() {
+	void saveToFile() {
 		obj.put("ProjDirs", list);
 		
 		 try (FileWriter file = new FileWriter("ProjDirs.json")) {
@@ -59,16 +58,11 @@ public class AddToList {
 	         System.out.println(obj);
 	         
 	         JSONArray tempStore = (JSONArray) obj.get("ProjDirs.json");
-	            Iterator<String> iterator = tempStore.iterator();
-	            while (iterator.hasNext()) {
-	                list.add((iterator.next()));
-	            }
-	         } catch (FileNotFoundException e) {
-	            e.printStackTrace();
-	            } catch (IOException e) {
-	            e.printStackTrace();
-	            } catch (ParseException e) {
+			 for (String aTempStore : (Iterable<String>) tempStore) {
+				 list.add((aTempStore));
+			 }
+	         } catch (IOException | ParseException e) {
 	            e.printStackTrace();
 	            }
-	     }
+	}
 }

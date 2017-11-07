@@ -18,13 +18,13 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Iterator;
 
-public class Pusher {
+class Pusher {
 	private Repository repo;
 	private final String TAG = "Pusher: ";
 	private String repositroyPath;
 	private FileRepositoryBuilder repBuilder;
 	
-	public Pusher() {
+	Pusher() {
 		repositroyPath = "";
 		repBuilder = new FileRepositoryBuilder();
 		}
