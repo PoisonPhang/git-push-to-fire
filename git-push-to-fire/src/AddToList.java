@@ -19,6 +19,7 @@ import org.json.simple.parser.ParseException;
 public class AddToList {
 	private JSONArray list;
 	private JSONObject obj;
+	private final String TAG = "AddToList: ";
 	Repository repo;
 
 	AddToList() {

@@ -1,5 +1,5 @@
 /**
- * 
+ *
  * @author poisonphang
  * 
  * Driver class
@@ -13,14 +13,16 @@ public class Main {
 		Scanner input = new Scanner(System.in);
 		
 		boolean isRunning = true;
-		String userInput = "";
-		
+		String userInput;
+
 		System.out.println("'add' to add git repo to managed list");
 		System.out.println("	add (next line) C:\\%path-to-project%");
-		System.out.println("'view' to look at currnetly managed directories");
+		System.out.println("'view' to look at currently managed directories");
 		System.out.println("'trigger' to trigger example run of the program");
 		System.out.println("'help' show commands");
 		System.out.println("'exit' to exit program");
+
+		addToList.grabFromFile();
 		
 		while (isRunning) {
 			
