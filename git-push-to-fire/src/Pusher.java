@@ -31,7 +31,7 @@ class Pusher {
 	
 	void commitAndPush() {
 		Git git = new Git(repo);
-		git.commit().setMessage("Emergancy");
+		git.commit().setMessage("Emergency");
 		git.push();
 	}
 	

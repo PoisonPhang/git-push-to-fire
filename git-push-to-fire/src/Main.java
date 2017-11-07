@@ -17,7 +17,7 @@ public class Main {
 		
 		System.out.println("'add' to add git repo to managed list");
 		System.out.println("	add (next line) C:\\%path-to-project%");
-		System.out.println("'veiw' to look at currnetly managed directories");
+		System.out.println("'view' to look at currnetly managed directories");
 		System.out.println("'trigger' to trigger example run of the program");
 		System.out.println("'help' show commands");
 		System.out.println("'exit' to exit program");
@@ -33,7 +33,7 @@ public class Main {
 				userInput = input.nextLine();
 				addToList.addItem(userInput);
 				addToList.saveToFile();
-			} else if (userInput.equalsIgnoreCase("veiw")) {
+			} else if (userInput.equalsIgnoreCase("view")) {
 				System.out.println(addToList.getList());
 			} else if (userInput.equalsIgnoreCase("trigger")) {
 				pusher.assignRepo();
@@ -41,7 +41,7 @@ public class Main {
 			} else if(userInput.equalsIgnoreCase("help")) {
 				System.out.println("'add' to add git repo to managed list");
 				System.out.println("	add (next line) C:\\%path-to-project%");
-				System.out.println("'veiw' to look at currnetly managed directories");
+				System.out.println("'view' to look at currently managed directories");
 				System.out.println("'trigger' to trigger example run of the program");
 				System.out.println("'help' show commands");
 				System.out.println("'exit' to exit program");
